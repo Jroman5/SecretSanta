@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,16 @@ public class PersonHandler {
 
     public List<Person> getGroupMembers() {
         return groupMembers;
+    }
+
+    /**
+     * Reads the file given and appends the people to the list
+     *
+     * @param file File to read to add people to the group members
+     * @return true if addition is successful false otherwise
+     */
+    public boolean addFromFile(File file){
+        return false;
     }
 
     /**
