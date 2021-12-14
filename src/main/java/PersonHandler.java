@@ -15,7 +15,7 @@ public class PersonHandler {
     }
 
     /**
-     * Reads the file given and appends the people to the list
+     * Reads the file given and appends the people to the list of groupMembers
      *
      * @param file File to read to add people to the group members
      * @return true if addition is successful false otherwise
