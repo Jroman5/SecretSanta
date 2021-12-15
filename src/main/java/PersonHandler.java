@@ -35,4 +35,17 @@ public class PersonHandler {
         this.groupMembers.add(new Person(name, phoneNumber, phoneService));
     }
 
+    public List<String> generateGiftees(){
+        List<String> giftees = new ArrayList();
+        for(int i = 0; i<this.groupMembers.size();i++){
+            int giftee = (int)(Math.random() * this.groupMembers.size());
+            while(giftees.contains(this.groupMembers.get(giftee).getName()) || giftees.size() == giftee){
+                giftee = (int)(Math.random() * this.groupMembers.size());
+            }
+            giftees.add(this.groupMembers.get(giftee).getName());
+
+        }
+        return giftees;
+    }
+
 }

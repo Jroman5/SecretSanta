@@ -1,9 +1,8 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PersonHandlerTest {
     @Test
@@ -39,6 +38,12 @@ public class PersonHandlerTest {
             assertEquals(rdmGiftees.indexOf(groupMembers.get(i).getName()), rdmGiftees.lastIndexOf(groupMembers.get(i).getName()));
             assertNotEquals(rdmGiftees.get(i),groupMembers.get(i).getName());
         }
+    }
+
+    @Test
+    void generateGifteesEmptyList() {
+        PersonHandler ph = new PersonHandler();
+        assertNotNull(ph.generateGiftees());
     }
 
 }
