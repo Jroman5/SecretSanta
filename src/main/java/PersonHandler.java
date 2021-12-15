@@ -35,6 +35,13 @@ public class PersonHandler {
         this.groupMembers.add(new Person(name, phoneNumber, phoneService));
     }
 
+    /**
+     * Takes the List<Person> groupMembers and randomizes the names
+     * such that groupMemebers.get(i).getName != giftees.get(i)
+     * && every name in groupMembers is in giftees
+     * && groupMembers.size() == giftees.size()
+     * @return giftees List of giftee names
+     */
     public List<String> generateGiftees(){
         List<String> giftees = new ArrayList();
         for(int i = 0; i<this.groupMembers.size();i++){
