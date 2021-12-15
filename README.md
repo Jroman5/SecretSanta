@@ -15,3 +15,14 @@ assigns everyone in the group a random group member that isn't themselves or has
         <version>1.6.2</version>
     </dependency>
 ```
+
+<p>This project also uses JUnit 5 for its testing use the following maven dependency to add it to your project resources.
+
+```
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>RELEASE</version>
+        <scope>test</scope>
+    </dependency>
+```
