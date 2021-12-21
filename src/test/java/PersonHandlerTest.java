@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -41,9 +42,17 @@ public class PersonHandlerTest {
     }
 
     @Test
-    void generateGifteesEmptyList() {
+    void generateGifteesEmptyListTest() {
         PersonHandler ph = new PersonHandler();
         assertNotNull(ph.generateGiftees());
+    }
+
+    @Test
+    void addFromFileTest(){
+        PersonHandler ph = new PersonHandler();
+        assertTrue(ph.addFromFile(new File("")));
+        assertEquals(9,ph.getSize());
+
     }
 
 }

@@ -1,6 +1,8 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class PersonHandler {
     private List<Person> groupMembers;
@@ -21,7 +23,18 @@ public class PersonHandler {
      * @return true if addition is successful false otherwise
      */
     public boolean addFromFile(File file){
-        return false;
+        try{
+            Scanner scanner = new Scanner(file);
+            while(scanner.hasNext()){
+                String nextLine = scanner.nextLine();
+                String[] personValues = nextLine.split(",");
+                this.addPerson(personValues[0], personValues[1], personValues[2]);
+            }
+        }catch(FileNotFoundException fileNotFoundException){
+            fileNotFoundException.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -53,6 +66,10 @@ public class PersonHandler {
 
         }
         return giftees;
+    }
+
+    public int getSize(){
+        return this.groupMembers.size();
     }
 
 }
